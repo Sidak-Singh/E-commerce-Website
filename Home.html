@@ -4,30 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./assets/vue.global.js" ></script>
     <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/Home.css">
 
 
 </head>
 <body>
+  <!-- The App Conponent -->
     <div class="app">
-
-
+      <!-- The Nav of the Page  -->
+ <nav>
+   <!-- The burger for responsive nav Bar -->
+   <div class="burger">
+     <div></div>
+     <div></div>
+     <div></div>
+   </div>
+  <div class="logo">
+    CartIt
+  </div>
+ <div class="search">
+   <input type="text">
+ </div>
+  <ul class="nav-links">
+    <li>
+      <a href="#">Home</a>
+    </li>
+    <li>
+      <a href="#">WishList and Orders</a>
+    </li>
+    <!-- Dynamic Link by Vue -->
+    <li>
+      <a href="#">{{logurl}}</a>
+    </li>
+    <li>
+      <a href="#">Setting</a>
+    </li>
+  </ul>
+ </nav>
+ <!-- Nav End -->
     </div>
-    <script defer>
-
-
-const VueApp =Vue.createApp({
-    data(){
-        return{
-
-        }
-    },
-
-})
-
-VueApp.mount('.app')
-
-    </script>
+    <!-- End OF the App Component -->
+    <script src="./assets/vue.global.js"></script>
+    <script src="Js/Home.js"></script>
 </body>
 </html>
