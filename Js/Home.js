@@ -20,7 +20,7 @@ navlink.style.transition=" all 1s ease-in-out";
 navlink.classList.toggle('nav-active')
 navlinkli.forEach((item, i) => {
   // checking for the animation on the links and then removing them and adding them again
-  item.style.animation?item.style.animation="":item.style.animation=`navlianimate 0.8s ease-in forwards ${i/5+1}s`
+item.style.animation?item.style.animation="":item.style.animation=`navlianimate 0.8s ease-in forwards ${i/5+1}s`
 
 
 });
