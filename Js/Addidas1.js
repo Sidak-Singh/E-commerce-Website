@@ -1,24 +1,48 @@
-var preTShirt=Data.filter(obj=>obj.key !== "none")
 
+var suggest=[]
+for (var i = 0; i < 3; i++) {
+  var num =Math.floor(Math.random()*Data.length)
+  suggest.push(Data[num])
+}
+var date=()=>{
+  var d=new Date();
+var day=d.getDay();
+var days=[
+  'Sunday',
+  'Monday',
+'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday'
+]
+var date=d.getDate();
+
+return(`${days[day]} ${date}`);
+}
+date()
 const VueApp =Vue.createApp({
     data(){
         return{
 
+product:0,
 data:Data,
-tshirthome:preTShirt
-        }
-    },
+productname:Data[0].name,
+suggestions:suggest,
+date:date()
 
-})
+}
+}}
+)
 
 VueApp.mount('.app')
-
   // declare the variables of the dom elements
   const burger=document.querySelector(".burger")
   const navlink=document.querySelector('.nav-links')
-    const input=document.querySelector('.srch-input')
   const navlinkli= document .querySelectorAll('.nav-links li')
-  const tshirthome=document.querySelectorAll('.tshirthome')
+const modal=document.querySelector('.modal-bg')
+const img=document.querySelector('.main-img')
+    const input=document.querySelector('.srch-input')
   // navigation responsive functions
   burger.addEventListener("click",()=>{
 navlink.style.transition=" all 1s ease-in-out";
@@ -33,26 +57,12 @@ item.style.animation?item.style.animation="":item.style.animation=`navlianimate 
 });
 
   })
-
-  var slideIndex = 0;
-  showSlides();
-
-  function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 4000); // Change image every 2 seconds
-  }
-  tshirthome.forEach((item, i) => {
-    item.addEventListener('click',()=>{
-      location.href=item.getAttribute('data-key')
-    })
-  });
+  img.addEventListener('click',()=>{
+    modal.style.display="flex"
+  })
+  modal.addEventListener('click',()=>{
+        modal.style.display="none"
+  })
   input.addEventListener('focus',()=>{
     location.href="/pages/search.html"
   })

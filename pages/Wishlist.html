@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart It</title>
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/Wishlist.css">
+
+</head>
+<body>
+  <!-- The App Conponent -->
+    <div class="app">
+      <!-- The Nav of the Page  -->
+      <nav class="container-fluid">
+        <!-- The burger for responsive nav Bar -->
+        <div class="nav">
+
+
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+       <div class="logo">
+         CartIt
+       </div>
+       <ul class="nav-links">
+         <li>
+           <a href="/pages/home.html">Home</a>
+         </li>
+         <li>
+           <a href="/pages/wishlist.html">WishList and Orders</a>
+         </li>
+         <li>
+           <a href="/pages/cart.html">Cart</a>
+         </li>
+       </ul>
+       </ul>
+          </div>
+          <div class="input-group mb-3 input">
+             <input type="text" class="form-control srch-input" placeholder="Search for a Product " aria-label="Search" aria-describedby="basic-addon1">
+          </div>
+      </nav>
+      <!-- Nav End -->
+<div class="wishtop container-fluid row">
+
+  <img src="../assets/images/wishlist.png" alt="" class="img-rounded fluid wish-img col-md-7">
+
+<div class="wishtop-txt col-md-5 container-fluid">
+  <h2>Wishlist</h2>
+<q> <i>Want to buy something, but can’t afford it now? Save it to Cart it's Wishlist and keep track of your wishes and help plan your purchases.</i></q><br>
+    Make your Wishes come true with the Wishlist.
+    Add Your Favorite Items Here and and never Lose them.
+</div>
+</div>
+
+<div class="wisharea container-fluid">
+<h2 style="font-family:Varela">Your Wishlist</h2>
+<div class="row wishes fluid">
+<div v-for="itm in wish"  class="itm col-md-4">
+       <img v-bind:src="itm.src"  class="itm-img img-fluid img-rounded">
+       <span class="itm-txt">{{itm.name}}</span>
+       <a type="button" href="/pages/cart.html" class="btn btn-primary">Add to Cart</a>
+</div>
+</div>
+</div>
+  </div>
+    <!-- End OF the App Component -->
+    <script src="../assets/vue.global.js"></script>
+        <script src="../Js/global.js"></script>
+    <script src="../Js/Wishlist.js"></script>
+
+</body>
+</html>

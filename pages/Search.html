@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/search.css">
+
+</head>
+<body>
+  <!-- App component -->
+  <div class="app">
+    <!-- The Nav of the Page  -->
+    <nav>
+      <!-- The burger for responsive nav Bar -->
+      <div class="nav">
+
+
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="logo">
+        CartIt
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="/pages/home.html">Home</a>
+        </li>
+        <li>
+          <a href="/pages/wishlist.html">WishList and Orders</a>
+        </li>
+        <li>
+          <a href="/pages/cart.html">Cart</a>
+        </li>
+      </ul>
+      </ul>
+    </div>
+
+      <div class="input-group mb-3 input">
+    <div class="input-group-prepend">
+      <select class="category" v-model='category' >
+            <option>All</option>
+          <option v-for='categ in categories'>{{categ}}</option>
+      </select>
+</div>
+    <input type="text" class="form-control srch-input" placeholder="Search for a product" aria-label="Username" aria-describedby="basic-addon1" v-model="search" @keyup.enter.exact="filterit">
+    <div class="input-group-prepend">
+      <span v-on:click='filterit()' class="input-group-text" id="basic-addon1" style="border-radius:5px;background-color: rgb(176, 154, 218);cursor:pointer">🔎</span>
+    </div>
+  </div>
+
+  </nav>
+<div class="search-results container-fluid">
+  <h2>{{query}}</h2>
+<div class="results row">
+  <div v-for="result in results" class="result col-md-3" v-bind:data-key='result.key' v-on:click="redir(result.key)" >
+    <img v-bind:src="result.src"  class="result-img img-fluid img-rounded">
+    <span class="result-txt">{{result.name}}</span>
+  </div>
+</div>
+
+</div>
+</div>
+<!-- End OF the App Component -->
+<script src="../assets/vue.global.js"></script>
+    <script src="../Js/global.js"></script>
+<script src="../Js/search.js"></script>
+
+
+ </body>
+</html>

@@ -1,11 +1,9 @@
-var preTShirt=Data.filter(obj=>obj.key !== "none")
 
 const VueApp =Vue.createApp({
     data(){
         return{
-
 data:Data,
-tshirthome:preTShirt
+type:''
         }
     },
 
@@ -18,7 +16,8 @@ VueApp.mount('.app')
   const navlink=document.querySelector('.nav-links')
     const input=document.querySelector('.srch-input')
   const navlinkli= document .querySelectorAll('.nav-links li')
-  const tshirthome=document.querySelectorAll('.tshirthome')
+  const modalbtn=document.querySelector('.modal-btn')
+    const modal=document.querySelector('.modal-bg')
   // navigation responsive functions
   burger.addEventListener("click",()=>{
 navlink.style.transition=" all 1s ease-in-out";
@@ -33,26 +32,12 @@ item.style.animation?item.style.animation="":item.style.animation=`navlianimate 
 });
 
   })
-
-  var slideIndex = 0;
-  showSlides();
-
-  function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 4000); // Change image every 2 seconds
-  }
-  tshirthome.forEach((item, i) => {
-    item.addEventListener('click',()=>{
-      location.href=item.getAttribute('data-key')
-    })
-  });
   input.addEventListener('focus',()=>{
     location.href="/pages/search.html"
+  })
+  modalbtn.addEventListener('click',()=>{
+      modal.style.display="flex"
+  })
+  modal.addEventListener('click',()=>{
+        modal.style.display="none"
   })

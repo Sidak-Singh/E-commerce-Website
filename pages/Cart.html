@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart It</title>
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/cart.css">
+
+</head>
+<body>
+  <!-- The App Conponent -->
+    <div class="app">
+      <!-- The Nav of the Page  -->
+      <nav class="container-fluid">
+        <!-- The burger for responsive nav Bar -->
+        <div class="nav">
+
+
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+       <div class="logo">
+         CartIt
+       </div>
+       <ul class="nav-links">
+         <li>
+           <a href="/pages/home.html">Home</a>
+         </li>
+         <li>
+           <a href="/pages/wishlist.html">WishList and Orders</a>
+         </li>
+         <li>
+           <a href="/pages/cart.html">Cart</a>
+         </li>
+       </ul>
+       </ul>
+          </div>
+          <div class="input-group mb-3 input">
+             <input type="text" class="form-control srch-input" placeholder="Search for a Product " aria-label="Search" aria-describedby="basic-addon1">
+          </div>
+      </nav>
+      <!-- Nav End -->
+<div class="cartop container-fluid row">
+
+  <img src="../assets/images/cart.png" alt="" class="img-rounded fluid cart-img col-md-7">
+
+<div class="cartop-txt col-md-5">
+  <h2>Ready to  Checkout With the items</h2>
+</div>
+</div>
+
+<div class="cartarea">
+<h2 style="font-family:Varela">Your Cart</h2>
+<div class="row carts fluid">
+<div v-for="itm in carts"  class="itm col-md-4">
+       <img v-bind:src="itm.src"  class="itm-img img-fluid img-rounded">
+       <span class="itm-txt">{{itm.name}}</span>
+       <a type="button" href="/pages/buy.html" class="btn btn-primary">Buy Now</a>
+</div>
+</div>
+</div>
+  </div>
+    <!-- End OF the App Component -->
+    <script src="../assets/vue.global.js"></script>
+        <script src="../Js/global.js"></script>
+    <script src="../Js/cart.js"></script>
+
+</body>
+</html>

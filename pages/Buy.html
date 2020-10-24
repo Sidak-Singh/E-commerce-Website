@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart It</title>
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/buy.css">
+
+</head>
+<body>
+  <!-- The App Conponent -->
+    <div class="app">
+      <!-- The Nav of the Page  -->
+      <nav class="container-fluid">
+        <!-- The burger for responsive nav Bar -->
+        <div class="nav">
+
+
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+       <div class="logo">
+         CartIt
+       </div>
+       <ul class="nav-links">
+         <li>
+           <a href="/pages/home.html">Home</a>
+         </li>
+         <li>
+           <a href="/pages/wishlist.html">WishList and Orders</a>
+         </li>
+         <li>
+           <a href="/pages/cart.html">Cart</a>
+         </li>
+       </ul>
+       </ul>
+          </div>
+          <div class="input-group mb-3 input">
+             <input type="text" class="form-control srch-input" placeholder="Search for a Product " aria-label="Search" aria-describedby="basic-addon1">
+          </div>
+      </nav>
+      <!-- Nav End -->
+      <div class="address row">
+        <img src="../assets/images/location.png" alt="" class="img-rounded loc-img col-md-6">
+        <div class="col-md-4 loc-inp">
+          <h2>Enter your Address </h2>
+           <input type="text" class="form-control" placeholder="Enter your Address ">
+        </div>
+      </div>
+      <div class="payment row">
+      <div class="col-md-4 pay-inp">
+          <h2>Enter your Payment details </h2>
+    <div class=""><label>Cash On Delivery *</label> &nbsp; <input type="radio" value='cash'  name="type" v-model='type'>    </div>
+        <span>Or</span>
+    <div class=""><label>Pay by Card *</label> &nbsp; <input type="radio" value='card'  name="type" v-model='type' >    </div>
+    <div v-if="type==='card'" class="row">
+      <input type="text" class="form-control col-md-12" placeholder="Enter your First Name">
+      <input type="text" class="form-control col-md-12" placeholder="Enter your Last Name">
+      <input type="password" class="form-control col-md-12" placeholder="Enter your Card Number">
+      <input type="date" class="form-control col-md-7" placeholder="Enter your Card Number">
+
+    </div>
+    <br>
+<button type="button" class="btn modal-btn btn-primary">Buy</button>
+        </div>
+          <img src="../assets/images/payment.png" alt="" class="img-rounded loc-img col-md-6">
+
+      </div>
+      <div class="modal-bg">
+
+          Succesful purchase
+            <img src="../assets/images/complete.png" alt="" class="img-rounded modalimg">
+        </div>
+       </div>
+  </div>
+    <!-- End OF the App Component -->
+    <script src="../assets/vue.global.js"></script>
+        <script src="../Js/global.js"></script>
+    <script src="../Js/buy.js"></script>
+
+</body>
+</html>

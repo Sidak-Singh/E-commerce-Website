@@ -23,14 +23,12 @@ nav{
   width: 100%;
   height: 18vh;
   background-color:rgba(91, 61, 238, 1);
-  z-index: 1;
-  color:white;
+  z-index: 2
 }
 .nav{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
 }
 .logo{
   color:rgb(222, 229, 241);
@@ -138,58 +136,52 @@ top: 13px
      transform: translateX(0px);
    }
  }
- /* Slideshow */
-.slideshow-container{
-  margin-top: 18vh;
+.wishtop{
+  margin-top:17vh;
   width: 100%;
-  border: 2px solid rgb(230, 185, 28);
-
-}
-/* Hide the images by default */
-.mySlides {
-  width: 100%;
-  height: 100%;
-  transition: 1s ease-in;
-}
-
-.sale{
-  display: flex;
+  height: 90vh;
+  background-color:white;
   align-items: center;
-  justify-content: space-evenly;
-  color: white;
-  background-color: #f9ad9dff;
-  width:100%
+  justify-content: space-around;
+
 }
-.sale-title{
-  margin-top: 25%;
-  text-align:center;
-}
-.sale-btn{
-  margin-left: 40%;
-  font-family: Varela;
-}
-.tshirtsuggest{
+.wish-img{
   width: 100%;
+  height: 90vh;
+}
+.wishtop-txt {
+
+  color: black;
+  font-family:Varela;
+ border: 2px solid rgb(56, 58, 244);
+ height: 40vh;
+ display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.wishtop-txt h2{
+  color:rgb(58, 55, 92);
+  font-size: clamp(20px,2vw,40px);
+  font-family: Montserrat-SemiBold;
+
+}
+.wisharea{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  background-color: rgb(91, 72, 244)
+  justify-content: center;
+  min-height:60vh
 }
-.tshirtsuggest h2{
-  color: white;
-  margin-top: 10px;
-  font-family: Varela;
-  font-size: clamp(20px,2vw,35px)
-}
-.tshirts{
+
+.wishes{
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  margin-left: 5px
 }
-.tshirthome{
+.itm{
   border: 1px solid rgb(36, 36, 50);
   height:40vh;
-  margin: 1%;
  border-radius: 5px;
  display: flex;
  flex-direction: column;
@@ -198,44 +190,43 @@ top: 13px
  background-color: white;
  cursor: pointer;
  text-align: center;
+ margin: 2px
 }
-.tshirt-img{
-  width: 55%;
+.itm-img{
+  width: 40%;
   height: 70%
 }
-.tshirt-btn{
-width: 20%;
-margin: 5px;
-}
-.tshirt-txt{
+.itm-txt{
   color: rgb(32, 35, 43);
   font-family: Varela;
  font-size: clamp(15px,1.3vw,30px)
 }
 
-
-/* Setting the top to be responsive  */
-@media screen and (max-width:770px) {
-.slideshow-container{
+@media screen and (max-width:770px)  {
+  .wishtop{
     margin-top: 13vh;
-}
-.mySlides{
-  width: 100%;
-}
-.sale-title{
-  margin-top: 0%
-
-}
-.tshirt-img{
-  width: 100%;
-  height: 50%
-}
-.tshirthome{
-width:30vw;
-height: 50vh;
-  margin: 3px
-}
-.saleimg{
-max-height: 70vh
-}
+        height: 90vh;
+  }
+  .wish-img{
+    width: 100%;
+    height: 70vh;
+  }
+  .wishtop-txt{
+    height: 50vh;
+    margin-top: 5%;
+    margin-left: 10px
+  }
+.itm-img{
+    width: 80%;
+    height: 70%;
+  }
+  .itm{
+  width:45vw;
+  height: 50vh;
+  margin: 5px
+  }
+  .wisharea{
+    margin-top: 40vh;
+    height: 130vh
+  }
 }

@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/product.css">
+
+</head>
+<body>
+  <!-- App component -->
+  <div class="app">
+    <!-- The Nav of the Page  -->
+    <nav>
+      <!-- The burger for responsive nav Bar -->
+      <div class="nav">
+
+
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="logo">
+        CartIt
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="/pages/home.html">Home</a>
+        </li>
+        <li>
+          <a href="/pages/wishlist.html">WishList and Orders</a>
+        </li>
+        <li>
+          <a href="/pages/cart.html">Cart</a>
+        </li>
+      </ul>
+      </ul>
+    </div>
+    <div class="input-group mb-3 input">
+       <input type="text" class="form-control srch-input" placeholder="Search for a Product " aria-label="Search" aria-describedby="basic-addon1">
+    </div>
+</nav>
+<!-- Nav End -->
+  <div class="front row">
+
+<div class="image-div col-md-5">
+  <span v-bind:title="productname">
+    <img :src="data[product].src" alt="" class="img-rounded main-img">
+   </span>
+</div>
+
+<div class="Content col-md-6">
+  <div class="pro-name">
+    {{data[product].name}}
+  </div>
+      <div class="rating"><span v-for="rate in data[product].rate" class="">⭐️ &nbsp;</span>  </div>
+  <div class="line"></div>
+<div class="product-real-price">
+  MRP: <s>₹ {{data[product].rprice}}</s>
+</div>
+<div class="price">
+Price: ₹ {{data[product].rprice-data[product].dis/100*data[product].rprice}}
+
+</div>
+<div class="green">
+You Save: ₹ {{data[product].dis/100*data[product].rprice}} ({{data[product].dis}}%)
+</div>
+<div class="green">
+Delivery By : {{date}}
+</div>
+<div class="green">
+Delivery Charge : ₹ {{0.3*data[product].rprice}}
+</div>
+  <div class="green">
+    <b>Size : </b>
+    <select >
+      <option>Select</option>
+        <option>XS</option>
+          <option>S</option>
+            <option>M</option>
+              <option>L</option>
+                <option>XL</option>
+                <option>2XL</option>
+    </select>
+  </div>
+  <div class="btns row">
+  <button type="button col-md-3" class="btn btn-primary">Add to WishList</button>
+  <button type="button col-md-3" class="btn btn-primary">Add to Cart</button>
+  </div>
+    <div class="line"></div>
+    <br>
+  <div class="description" >
+    <b class="green">Description :</b>
+{{data[product].description}}
+</div><br>
+  <div class="line"></div><br>
+  <div class="description" >
+    <b class="green">Payment Style : </b>
+Online Payment and Cash On Delivery Available
+</div><br>
+</div>
+    <div class="linesep"></div>
+<div class="suggest-area">
+<h2>Todays Suggestions</h2>
+<div class="row suggestions fluid">
+<div v-for="sugg in suggestions"  class="sugg col-md-3">
+       <img v-bind:src="sugg.src"  class="sugg-img img-fluid img-rounded">
+       <span class="sugg-txt">{{sugg.name}}</span></div></div>
+  </div>
+  </div>
+
+
+
+
+  <div class="modal-bg">
+      <img :src="data[product].src" alt="" class="img-rounded modalimg">
+  </div>
+
+
+</div>
+<!-- End OF the App Component -->
+<script src="../assets/vue.global.js"></script>
+    <script src="../Js/global.js"></script>
+<script src="../Js/Buffalo1.js"></script>
+
+
+ </body>
+</html>

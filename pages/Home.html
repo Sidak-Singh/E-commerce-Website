@@ -3,49 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cart It</title>
     <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/Home.css">
-
 
 </head>
 <body>
   <!-- The App Conponent -->
     <div class="app">
       <!-- The Nav of the Page  -->
- <nav>
-   <!-- The burger for responsive nav Bar -->
-   <div class="burger">
-     <div></div>
-     <div></div>
-     <div></div>
-   </div>
-  <div class="logo">
-    CartIt
+      <nav class="container-fluid">
+        <!-- The burger for responsive nav Bar -->
+        <div class="nav">
+
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+       <div class="logo">
+         CartIt
+       </div>
+       <ul class="nav-links">
+         <li>
+           <a href="/pages/home.html">Home</a>
+         </li>
+         <li>
+           <a href="/pages/wishlist.html">WishList and Orders</a>
+         </li>
+         <li>
+           <a href="/pages/cart.html">Cart</a>
+         </li>
+       </ul>
+       </ul>
+          </div>
+          <div class="input-group mb-3 input">
+             <input type="text" class="form-control srch-input" placeholder="Search for a Product " aria-label="Search" aria-describedby="basic-addon1">
+          </div>
+      </nav>
+      <!-- Nav End -->
+
+   <!-- Slideshow container -->
+   <div class="slideshow-container">
+
+     <!-- Full-width images with number and caption text -->
+     <div class="mySlides fadeit">
+       <img src="../assets/images/image1.jpg" style="width:100%">
+     </div>
+
+     <div class="mySlides fadeit">
+       <img src="../assets/images/image2.jpg" style="width:100%">
+     </div>
+
+     <div class="mySlides fadeit">
+       <img src="../assets/images/image3.jpg" style="width:100%">
+     </div>
+     <div class="mySlides fadeit">
+       <img src="../assets/images/image4.jpg" style="width:100%">
+     </div>
   </div>
- <div class="search">
-   <input type="text">
- </div>
-  <ul class="nav-links">
-    <li>
-      <a href="#">Home</a>
-    </li>
-    <li>
-      <a href="#">WishList and Orders</a>
-    </li>
-    <!-- Dynamic Link by Vue -->
-    <li>
-      <a href="#">{{logurl}}</a>
-    </li>
-    <li>
-      <a href="#">Setting</a>
-    </li>
-  </ul>
- </nav>
- <!-- Nav End -->
+ <!-- Top End -->
+ <!-- Sale  Images  -->
+ <section>
+
+ <div class="sale fluid">
+   <div class="row">
+     <img src="../assets/images/saleadd.jpg"  class="saleimg img-fluid img-rounded col-md-6">
+      <div class="sale-body card-title col-md-6"><h3 class="sale-title">Shop Now and Get Discount Up to 70%</h3><br>  <a type="button" href="/pages/search.html" class="btn sale-btn btn-primary">Shop Now</a></div>
     </div>
+  </div>
+
+ <!-- T-Shirts -->
+ <section class="tshirtsuggest container-fluid">
+   <h2>Today's Suggestions</h2>
+<div class="row tshirts fluid">
+<div v-for="tshirt in tshirthome"  class="tshirthome col-md-3" :data-key="tshirt.key">
+       <img v-bind:src="tshirt.src"  class="tshirt-img img-fluid img-rounded">
+       <span class="tshirt-txt">{{tshirt.name}}</span>
+
+</div>
+  </div>
+<button type="button" class="tshirt-btn btn btn-primary fluid">More -></button>
+ </section>
+</div>
     <!-- End OF the App Component -->
     <script src="../assets/vue.global.js"></script>
+        <script src="../Js/global.js"></script>
     <script src="../Js/Home.js"></script>
+
 </body>
 </html>
